@@ -1,0 +1,24 @@
+<html>
+    <head>
+
+    </head>
+    <body>
+        <h2 style="align-items: center"> LOGIN </h2>
+        <div style="color: red">
+            <% if(errors.length > 0) { %>
+                <% errors.forEach(error => { %>
+                    <p><%= error %></p>
+                <% }) %>
+            <% } %>
+        </div>
+        <form action="/" method="POST">
+            <input type="email" name="email" placeholder="Email">
+            <br>
+            <br>
+            <input type="password" name="password" placeholder="Password">
+            <br>
+            <br>
+            <input type="submit" value="Login">
+        </form>
+    </body>
+</html>
