@@ -1,24 +1,58 @@
 <html>
     <head>
+        <!-- Compiled and minified CSS -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 
+        <!-- Compiled and minified JavaScript -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     </head>
     <body>
-        <h2> SIGN UP </h2>
-        <div style="color: red">
-            <% if(errors.length > 0) { %>
-                <% errors.forEach(error => { %>
-                    <p><%= error %></p>
-                <% }) %>
-            <% } %>
+        <div class="container">
+            <div class="container">
+                <div class="container">
+                    <div class="container">
+                        <h2 style="font-size: 30px;"> Register </h2>
+                            <div style="color: red">
+                                <% if(errors.length > 0) { %>
+                                    <% errors.forEach(error => { %>
+                                        <p><%= error %></p>
+                                    <% }) %>
+                                <% } %>
+                            </div>
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <form class="col s12" action="/user/register" method="POST">
+                        <div class="row">
+                            <div class="input-field col s6">
+                                <i class="material-icons prefix">person</i>
+                                <input type="text" id="name" name="name" class="validate">
+                                <label for="name">Name</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                                <div class="input-field col s6">
+                                    <i class="material-icons prefix">alternate_email</i>
+                                    <input type="email" id="email" name="email" class="validate">
+                                    <label for="email">Email</label>
+                                </div>
+                            </div>
+                        <div class="row">
+                            <div class="input-field col s6">
+                                <i class="material-icons prefix">remove_red_eye</i>
+                                <input id="password" type="password" class="validate" name="password">
+                                <label for="password">Password</label>
+                            </div>
+                        </div>
+                        <div class="container">
+                            <input type="submit" value="Register" class="waves-effect waves-light btn" style="margin: 0px; width: 125px;">
+                        </div>
+                    </form>
+                </div>
+            </div>
         </div>
-        <form action="/user/register" method="POST">
-            <input type="text" name="name" placeholder="Name">
-            <br><br>
-            <input type="email" name="email" placeholder="Email">
-            <br><br>
-            <input type="password" name="password" placeholder="Password">
-            <br><br>
-            <input type="submit" value="Sign Up">
-        </form>
     </body>
 </html>
